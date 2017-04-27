@@ -14,6 +14,8 @@ public class Spielfeld
     private ArrayList<Buchstabe> alphabet;
     private ArrayList<JButton> buttons;
     private ArrayList<Zahl> zahlen;
+    private ArrayList<Schiffe3> schiffe3e;
+    private ArrayList<Schiffe4> schiffe4e;
     private int reiheno;
     private int plaetze;
     private JFrame spielframe;
@@ -24,6 +26,7 @@ public class Spielfeld
     private int schiffcounter4= 3;
     private int schiffcounter3= 4;
     private int placing3 =4;
+    private Buchstabe k ;
     /**
      * Konstruktor für Objekte der Klasse Spielfeld
      */
@@ -33,10 +36,11 @@ public class Spielfeld
         alphabet = new ArrayList<Buchstabe>();
         buttons = new ArrayList<JButton>();
         zahlen = new ArrayList<Zahl>();
+        schiffe3e = new ArrayList<Schiffe3>();
+        schiffe4e = new ArrayList<Schiffe4>();
         this.reiheno = reiheno;
         this.plaetze = plaetze;
         alphabetMachen();
-        zahlenMachen();
         spielfeldmachen(reiheno, plaetze);
     }
 
@@ -124,7 +128,7 @@ public class Spielfeld
             reihen.add(reihe);
             for(int p=0; p< plaetze;p++)
             {
-                reihe.platzHinzufuegen(new Platz(zahlen.get(p).gibNummer()));
+                reihe.platzHinzufuegen(new Platz(i+1));
             }    
         }
 
@@ -169,137 +173,104 @@ public class Spielfeld
     {
         Reihe reihei = new Reihe("");
         Object[] possibilities = alphabet.toArray();
-        Object[] possibilities2 = zahlen.toArray();
+        Object[] possibilities2 = k.zahlen.toArray();
         Object reihe1 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
         Buchstabe reihea = (Buchstabe) reihe1;
         Object platz1 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
         Zahl platznr1 = (Zahl) platz1;
-        zahlen.remove(platznr1);
+        alphabet.get(alphabet.indexOf(reihea)).zahlen.remove(platznr1);
+        possibilities = alphabet.toArray();
+        possibilities2 = alphabet.get(0).zahlen.toArray();
+        Object reihe2 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
+        Buchstabe reiheb = (Buchstabe) reihe2;
+        Object platz2 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
+        Zahl platznr2 = (Zahl) platz2;
+        alphabet.get(alphabet.indexOf(reiheb)).zahlen.remove(platznr2);
+        possibilities = alphabet.toArray();
+        possibilities2 = alphabet.get(0).zahlen.toArray();
+        Object reihe3 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
+        Buchstabe reihec = (Buchstabe) reihe3;
+        Object platz3 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
+        Zahl platznr3 = (Zahl) platz3;
+        alphabet.get(alphabet.indexOf(reihec)).zahlen.remove(platznr3);
+        Platz platzx = new Platz(0);
+        Platz platzy = new Platz(0);
+        Platz platzz = new Platz(0);
+        for(Reihe reihe : reihen)
+        {
+            if(reihe.gibName().equals(reihea.gibName()))
+            {   
+                platzx = reihe.gibPlatz(platznr1.gibNummer()-1);
+            }
+            if(reihe.gibName().equals(reihea.gibName()))
+            {   
+                platzy = reihe.gibPlatz(platznr2.gibNummer()-1);
+            }
+            if(reihe.gibName().equals(reihea.gibName()))
+            {   
+                platzz = reihe.gibPlatz(platznr3.gibNummer()-1);
+            }
+        }    
+       schiffe3e.add(new Schiffe3(platzx, platzy, platzz)); 
+       button.setEnabled(false);
+    }
+    
+    public void placeship4(JButton button)
+    {
+        Reihe reihei = new Reihe("");
+        Object[] possibilities = alphabet.toArray();
+        Object[] possibilities2 = k.zahlen.toArray();
+        Object reihe1 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
+        Buchstabe reihea = (Buchstabe) reihe1;
+        Object platz1 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
+        Zahl platznr1 = (Zahl) platz1;
+        alphabet.get(alphabet.indexOf(reihea)).zahlen.remove(platznr1);
         possibilities = alphabet.toArray();
         possibilities2 = zahlen.toArray();
         Object reihe2 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
         Buchstabe reiheb = (Buchstabe) reihe2;
         Object platz2 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
         Zahl platznr2 = (Zahl) platz2;
-        zahlen.remove(platznr2);
+        alphabet.get(alphabet.indexOf(reiheb)).zahlen.remove(platznr2);
         possibilities = alphabet.toArray();
         possibilities2 = zahlen.toArray();
         Object reihe3 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
         Buchstabe reihec = (Buchstabe) reihe3;
         Object platz3 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
         Zahl platznr3 = (Zahl) platz3;
-        zahlen.remove(platznr3);
-        button.setEnabled(false);
-    }
-    private ArrayList<JButton> gibButtons()
-    {
-        return buttons;
-    }    
-    
-    public void placeship4(JButton button)
-    {
-        Reihe reihei = new Reihe("");
-        Object[] possibilities = alphabet.toArray();
-        Object[] possibilities2 = zahlen.toArray();
-        Object reiheo = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
-        Buchstabe reiheb = (Buchstabe) reiheo;
-        Object platz = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
-        Zahl platznr = (Zahl) platz;
-        button.setEnabled(false);
-    }
-    public void schiffeSetzen()
-    {
-        /*Reihe reihei = new Reihe("");
-        Object[] possibilities = alphabet.toArray();
-        Object[] possibilities2 = zahlen.toArray();
-        Object reiheo = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "A");
-        Buchstabe reiheb = (Buchstabe) reiheo;
-        Object platz = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "1");
-        int platznr = (int) platz;
-        for(Reihe reihe: reihen)
+        alphabet.get(alphabet.indexOf(reihec)).zahlen.remove(platznr3);
+        possibilities = alphabet.toArray();
+        possibilities2 = zahlen.toArray();
+        Object reihe4 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
+        Buchstabe reihed = (Buchstabe) reihe4;
+        Object platz4 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
+        Zahl platznr4 = (Zahl) platz4;
+        alphabet.get(alphabet.indexOf(reihed)).zahlen.remove(platznr4);
+        Platz platzx = new Platz(0);
+        Platz platzy = new Platz(0);
+        Platz platzz = new Platz(0);
+        Platz platzr = new Platz(0);
+        for(Reihe reihe : reihen)
         {
-            if(reihe.gibName() == reiheb.toString())
-            {
-                reihei = reihe;
+            if(reihe.gibName().equals(reihea.gibName()))
+            {   
+                platzx = reihe.gibPlatz(platznr1.gibNummer()-1);
+            }
+            if(reihe.gibName().equals(reihea.gibName()))
+            {   
+                platzy = reihe.gibPlatz(platznr2.gibNummer()-1);
+            }
+            if(reihe.gibName().equals(reihea.gibName()))
+            {   
+                platzz = reihe.gibPlatz(platznr3.gibNummer()-1);
+            }
+            if(reihe.gibName().equals(reihea.gibName()))
+            {   
+                platzr = reihe.gibPlatz(platznr4.gibNummer()-1);
             }
         }    
-        // FEHLER DIE REIHEN UND PLÄTZE VONEINANDER ABZIEHEN!!!!
-
-        for(JButton button : buttons)
-        {
-            if(button.equals(reiheb.toString() + " " + platz))
-            {
-                if((reihen.indexOf(reihei)-3) - (reihen.indexOf(reihei)) != 3 || reihen.get(reihen.indexOf(reihei)).gibPlatz(-3).gibNummer() - reihen.get(reihen.indexOf(reihei)).gibPlatz(platznr).gibNummer() != 3)
-                {
-                    break;
-                } 
-                else if((reihen.indexOf(reihei)-2) - (reihen.indexOf(reihei)) != 2 || reihen.get(reihen.indexOf(reihei)).gibPlatz(-2).gibNummer() - reihen.get(reihen.indexOf(reihei)).gibPlatz(platznr).gibNummer() != 2)
-                {
-                    break;
-                }  
-                else if((reihen.indexOf(reihei)-1) - (reihen.indexOf(reihei)) != 1 || reihen.get(reihen.indexOf(reihei)).gibPlatz(-1).gibNummer() - reihen.get(reihen.indexOf(reihei)).gibPlatz(platznr).gibNummer() != 1)
-                {
-                    break;
-                }
-                else if((reihen.indexOf(reihei)+1) - (reihen.indexOf(reihei)) != -1 || reihen.get(reihen.indexOf(reihei)).gibPlatz(+1).gibNummer() - reihen.get(reihen.indexOf(reihei)).gibPlatz(platznr).gibNummer() != -1)
-                {
-                    break;
-                }
-                else if((reihen.indexOf(reihei)+2) - (reihen.indexOf(reihei)) != -2 || reihen.get(reihen.indexOf(reihei)).gibPlatz(+2).gibNummer() - reihen.get(reihen.indexOf(reihei)).gibPlatz(platznr).gibNummer() != -2)
-                {
-                    break;
-                }  
-                else if((reihen.indexOf(reihei)+3) - (reihen.indexOf(reihei)) != -3 || reihen.get(reihen.indexOf(reihei)).gibPlatz(+3).gibNummer() - reihen.get(reihen.indexOf(reihei)).gibPlatz(platznr).gibNummer() != -3)
-                {
-                    break;
-                }
-                else
-                {
-
-                }
-            }   
-        }*/
-        placing3--;
-        if(placing3 ==0)
-        {
-            for(JButton button : buttons)
-            {
-                button.setEnabled(false);
-            }
-        }    
-    }
-
-    private void buttonschiff(int s, int t)
-    { 
-        for(int i=0;i<reiheno;i++)
-        {
-            Reihe reihe = reihen.get(i);
-            for(int p=0; p<plaetze;p++)
-            {
-                JButton button = reihe.gibPlatz(p).gibButton();
-                button.setEnabled(false);
-            }
-
-        }   
-        //JButton button = reihen.get(s).gibPlatz(t).gibButton();
-        //button.setEnabled(true);
-        JButton button1 = reihen.get(s).gibPlatz(t-2).gibButton();
-        button1.setEnabled(true);
-        JButton button2 = reihen.get(s).gibPlatz(t-1).gibButton();
-        button2.setEnabled(true);
-        JButton button3 = reihen.get(s).gibPlatz(t+1).gibButton();
-        button3.setEnabled(true);
-        JButton button4 = reihen.get(s).gibPlatz(t+2).gibButton();
-        button4.setEnabled(true);
-        JButton button5 = reihen.get(s-2).gibPlatz(t).gibButton();
-        button5.setEnabled(true);
-        JButton button6 = reihen.get(s-1).gibPlatz(t).gibButton();
-        button6.setEnabled(true);
-        JButton button7 = reihen.get(s+1).gibPlatz(t).gibButton();
-        button7.setEnabled(true);
-        JButton button8 = reihen.get(s+2).gibPlatz(t).gibButton();
-        button8.setEnabled(true);
-        spielframe.pack();
+       schiffe4e.add(new Schiffe4(platzx, platzy, platzz, platzr)); 
+       button.setEnabled(false);
     }
 
     private void alphabetMachen()
@@ -314,45 +285,8 @@ public class Spielfeld
         alphabet.add(new Buchstabe("H", 8));
         alphabet.add(new Buchstabe("I", 9));
         alphabet.add(new Buchstabe("J", 10));
-        alphabet.add(new Buchstabe("K", 11));
-        alphabet.add(new Buchstabe("L", 12));
-        alphabet.add(new Buchstabe("M", 13));
-        alphabet.add(new Buchstabe("N", 14));
-        alphabet.add(new Buchstabe("O", 15));
-        alphabet.add(new Buchstabe("P", 16));
-        alphabet.add(new Buchstabe("Q", 17));
-        alphabet.add(new Buchstabe("R", 18));
-        alphabet.add(new Buchstabe("S", 19));
-        alphabet.add(new Buchstabe("T", 20));
-        alphabet.add(new Buchstabe("U", 21));
-        alphabet.add(new Buchstabe("V", 22));
-        alphabet.add(new Buchstabe("W", 23));
-        alphabet.add(new Buchstabe("X", 24));
-        alphabet.add(new Buchstabe("Y", 25));
-        alphabet.add(new Buchstabe("Z", 26));
+        k = new Buchstabe("K", 11);
     }  
 
-    private void zahlenMachen()
-    {
-        zahlen.add(new Zahl(1));
-        zahlen.add(new Zahl(2));
-        zahlen.add(new Zahl(3));
-        zahlen.add(new Zahl(4));
-        zahlen.add(new Zahl(5));
-        zahlen.add(new Zahl(6));
-        zahlen.add(new Zahl(7));
-        zahlen.add(new Zahl(8));
-        zahlen.add(new Zahl(9));
-        zahlen.add(new Zahl(10));
-        zahlen.add(new Zahl(11));
-        zahlen.add(new Zahl(12));
-        zahlen.add(new Zahl(13));
-        zahlen.add(new Zahl(14));
-        zahlen.add(new Zahl(15));
-        zahlen.add(new Zahl(16));
-        zahlen.add(new Zahl(17));
-        zahlen.add(new Zahl(18));
-        zahlen.add(new Zahl(19));
-        zahlen.add(new Zahl(20));        
-    }    
+
 }

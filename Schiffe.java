@@ -5,7 +5,7 @@ import java.awt.image.*;
 import javax.swing.*;
 public class Schiffe 
 {
-    private ArrayList<JButton> schiffplaetze;
+    private ArrayList<Platz> plaetze;
     private int anzahlPlaetze;
 
     /**
@@ -14,7 +14,7 @@ public class Schiffe
     public Schiffe(int anzahlPlaetze)
     {
         this.anzahlPlaetze= anzahlPlaetze;
-        schiffplaetze = new ArrayList<JButton>();
+        plaetze = new ArrayList<Platz>();
     }
     
     public int gibanzahlPlaetze()
@@ -22,13 +22,13 @@ public class Schiffe
         return anzahlPlaetze;
     }     
     
-    public ArrayList<JButton> gibButtons()
+    public ArrayList<Platz> gibPlatz()
     {
-        return schiffplaetze;
+        return plaetze;
     } 
     
-    public void setzeButton(JButton button)
+    public void setzePlatz(Platz platz)
     {
-        schiffplaetze.add(button);
+        plaetze.add(platz);
     }    
 }

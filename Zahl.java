@@ -22,4 +22,9 @@ public class Zahl
     {
         return nummer;
     }
+    
+    public String toString()
+    {
+        return "" + nummer;
+    }    
 }

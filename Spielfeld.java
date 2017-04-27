@@ -40,7 +40,7 @@ public class Spielfeld
     {
         reihen.add(reihe);
     }
-    
+
     private void spielfeldmachen(int reiheno, int plaetze)
     {   
         spielframe = new JFrame("Spielfläche");
@@ -49,7 +49,7 @@ public class Spielfeld
         spielframe.add(feldleiste, BorderLayout.WEST);
         spielfeld = new JPanel();
         spielfeld.setLayout(new GridLayout(reiheno,plaetze));
-        
+
         spielframe.add(spielfeld, BorderLayout.CENTER);
         spielframe.setVisible(true);
         for(int i=0; i< reiheno; i++)
@@ -61,12 +61,11 @@ public class Spielfeld
                 reihe.platzHinzufuegen(new Platz(zahlen.get(p).gibNummer()));
             }    
         }
-        
-       
+
         
         for(int i=0;i<reiheno;i++)
         {
-            
+
             Reihe reihe = reihen.get(i);
             feldleiste.add(new JLabel(" " + reihe.gibName() + " "));
             for(int p=0; p<plaetze;p++)
@@ -80,26 +79,25 @@ public class Spielfeld
                         {
                             //buttonschiff(s, t);
                             schiffeSetzen();
-     
+
                         }});
-                        
+
                 reihe.gibPlatz(p).setzButton(button);
                 spielfeld.add(button);
                 buttons.add(button);
             }
-            
+
         }   
         spielframe.pack();
         //String name = JOptionPane.showInputDialog(null, "What's your name?");
         //System.out.println(name);
     }    
-    
+
     public void gibButtonaus(int i, int p)
     {
         JButton button = reihen.get(i).gibPlatz(p).gibButton();
         System.out.println(button.getName());
-        
-        
+
     } 
     public void schiffeSetzen()
     {
@@ -114,11 +112,11 @@ public class Spielfeld
         {
             if(reihe.gibName() == reiheb.toString())
             {
-                 reihei = reihe;
+                reihei = reihe;
             }
         }    
         // FEHLER DIE REIHEN UND PLÄTZE VONEINANDER ABZIEHEN!!!!
-        
+
         for(JButton button : buttons)
         {
             if(button.equals(reiheb.toString() + " " + platz))
@@ -149,13 +147,13 @@ public class Spielfeld
                 }
                 else
                 {
-                    
-                    
-            }
-        }   
-    }    
-    private void buttonschiff(int s, int t)
-    { 
+
+                }
+            }   
+        }
+    }
+        private void buttonschiff(int s, int t)
+        { 
         for(int i=0;i<reiheno;i++)
         {
             Reihe reihe = reihen.get(i);
@@ -164,7 +162,7 @@ public class Spielfeld
                 JButton button = reihe.gibPlatz(p).gibButton();
                 button.setEnabled(false);
             }
-            
+
         }   
         //JButton button = reihen.get(s).gibPlatz(t).gibButton();
         //button.setEnabled(true);
@@ -186,7 +184,7 @@ public class Spielfeld
         button8.setEnabled(true);
         spielframe.pack();
     }
-    
+
     private void alphabetMachen()
     {
         alphabet.add(new Buchstabe("A", 1));
@@ -216,7 +214,7 @@ public class Spielfeld
         alphabet.add(new Buchstabe("Y", 25));
         alphabet.add(new Buchstabe("Z", 26));
     }  
-    
+
     private void zahlenMachen()
     {
         zahlen.add(new Zahl(1));

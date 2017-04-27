@@ -130,6 +130,7 @@ public class Spielfeld
               button.setEnabled(false);
           }  
           JOptionPane.showMessageDialog(null, "Wählen Sie bitte über die Buttons aus wo sie ihr Schiff platzieren möchten.");
+          gibButtons();
           for(JButton buttonp : buttons)
           {
               buttonp.setEnabled(true);
@@ -137,14 +138,18 @@ public class Spielfeld
           while(placing3 > 0)
           {
           }    
-          for(JButton buttoni : buttons)
-          {
-              buttoni.setEnabled(false);
-          }    
+          //for(JButton buttoni : buttons)
+          //{
+          //    buttoni.setEnabled(false);
+          //}    
           schiffcounter3--;
       }
  
     }
+    private ArrayList<JButton> gibButtons()
+    {
+        return buttons;
+    }    
     
     public void placeship4(JButton button)
     {

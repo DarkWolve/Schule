@@ -20,7 +20,10 @@ public class Spielfeld
     private JPanel spielfeld;
     private JPanel feldleiste;
     private JPanel seitenleiste;
-
+    private JPanel buttonleiste;
+    private int schiffcounter4= 3;
+    private int schiffcounter3= 4;
+    private int placing3 =3;
     /**
      * Konstruktor für Objekte der Klasse Spielfeld
      */
@@ -46,23 +49,25 @@ public class Spielfeld
     {   
         spielframe = new JFrame("Spielfläche");
         seitenleiste = new JPanel(new GridLayout(1,2));
-        feldleiste = new JPanel();
-        feldleiste.setLayout(new GridLayout(reiheno, 1));
+        //feldleiste = new JPanel();
+        //feldleiste.setLayout(new GridLayout(reiheno, 1));
+        buttonleiste= new JPanel(new GridLayout(2,1));
+        seitenleiste.add(buttonleiste);
         JButton schiffe4 = new JButton("4er Schiff setzen");
         schiffe4.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship4();
+                    placeship4(schiffe4);
                 }});    
-        seitenleiste.add(schiffe4);
+        buttonleiste.add(schiffe4);
         JButton schiffe3 = new JButton("3er Schiff setzen");
         schiffe3.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship3();
+                    placeship3(schiffe3);
                 }});
-        seitenleiste.add(schiffe3);
-        seitenleiste.add(feldleiste);
+        buttonleiste.add(schiffe3);
+        //seitenleiste.add(feldleiste);
         spielframe.add(seitenleiste, BorderLayout.WEST);
         spielfeld = new JPanel();
         spielfeld.setLayout(new GridLayout(reiheno,plaetze));
@@ -83,7 +88,7 @@ public class Spielfeld
         {
 
             Reihe reihe = reihen.get(i);
-            feldleiste.add(new JLabel(" " + reihe.gibName() + " "));
+            //feldleiste.add(new JLabel(" " + reihe.gibName() + " "));
             for(int p=0; p<plaetze;p++)
             {
                 int s = i;
@@ -97,7 +102,7 @@ public class Spielfeld
                             schiffeSetzen();
 
                         }});
-
+                button.setEnabled(false);
                 reihe.gibPlatz(p).setzButton(button);
                 spielfeld.add(button);
                 buttons.add(button);
@@ -116,17 +121,37 @@ public class Spielfeld
 
     } 
     
-    public void placeship3()
+    public void placeship3(JButton button)
     {
-        
+      if(schiffcounter3 <=4)
+      {   
+          if(schiffcounter3 <=1)
+          {
+              button.setEnabled(false);
+          }  
+          JOptionPane.showMessageDialog(null, "Wählen Sie bitte über die Buttons aus wo sie ihr Schiff platzieren möchten.");
+          for(JButton buttonp : buttons)
+          {
+              buttonp.setEnabled(true);
+          }    
+          while(placing3 > 0)
+          {
+          }    
+          for(JButton buttoni : buttons)
+          {
+              buttoni.setEnabled(false);
+          }    
+          schiffcounter3--;
+      }
+ 
     }
     
-    public void placeship4()
+    public void placeship4(JButton button)
     {
     }
     public void schiffeSetzen()
     {
-        Reihe reihei = new Reihe("");
+        /*Reihe reihei = new Reihe("");
         Object[] possibilities = alphabet.toArray();
         Object[] possibilities2 = zahlen.toArray();
         Object reiheo = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "A");
@@ -175,7 +200,8 @@ public class Spielfeld
 
                 }
             }   
-        }
+        }*/
+        placing3--;
     }
 
     private void buttonschiff(int s, int t)

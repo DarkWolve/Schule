@@ -12,8 +12,8 @@ public class Spiel
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private JFrame hauptfenster;
-    private int reihen;
-    private int plaetze;
+    private int reihen = 10;
+    private int plaetze = 10;
     private JMenuBar menubar;
     private JMenu spielbar;
     private JMenuItem startgame;
@@ -40,7 +40,7 @@ public class Spiel
         hauptfenster = new JFrame("Schiffe Versenken");
         hauptfenster.setSize(800,500);
         
-        String reiheninput= JOptionPane.showInputDialog(hauptfenster, "Geben Sie die Reihenanzahl an");
+        /*String reiheninput= JOptionPane.showInputDialog(hauptfenster, "Geben Sie die Reihenanzahl an");
         while(reiheninput.length()<1)
         {   
             reiheninput = JOptionPane.showInputDialog(hauptfenster, "Geben Sie die Reihenanzahl an");
@@ -64,7 +64,7 @@ public class Spiel
             plaetzeinput = JOptionPane.showInputDialog(hauptfenster, "Geben Sie die Plätze pro Reihe an");
             plaetze = Integer.parseInt(plaetzeinput);
         }
-        //System.out.println(plaetze);
+        //System.out.println(plaetze);*/
         
         String spieler1name = JOptionPane.showInputDialog(hauptfenster, "Spieler 1, nennen Sie ihren Namen: ");    
         String spieler2name = JOptionPane.showInputDialog(hauptfenster, "Spieler 2, nennen Sie ihren Namen: ");
@@ -82,12 +82,7 @@ public class Spiel
         leisterechts = new JPanel();
         leisterechts.setLayout(new GridLayout(4,1));
         hauptfenster.add(leisterechts, BorderLayout.WEST);
-        
-        //JLabel reihenlabel = new JLabel("Anzahl der Reihen: " + int2string(reihen));
-        //JLabel plaetzelabel = new JLabel("Anzahl der Plätze pro Reihe: " + int2string(plaetze));
-        
-        //leisterechts.add(reihenlabel);
-        //leisterechts.add(plaetzelabel);
+   
         
         JButton reihenbutton = new JButton("Anzahl der Reihen: " + int2string(reihen));
         reihenbutton.addActionListener(new ActionListener()

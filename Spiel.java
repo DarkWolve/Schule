@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * Beschreiben Sie hier die Klasse Spiel.
  * 
- * @author (Ihr Name) 
+ * @author (Ir Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
 public class Spiel

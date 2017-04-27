@@ -19,6 +19,7 @@ public class Spielfeld
     private JFrame spielframe;
     private JPanel spielfeld;
     private JPanel feldleiste;
+    private JPanel seitenleiste;
 
     /**
      * Konstruktor für Objekte der Klasse Spielfeld
@@ -44,9 +45,25 @@ public class Spielfeld
     private void spielfeldmachen(int reiheno, int plaetze)
     {   
         spielframe = new JFrame("Spielfläche");
+        seitenleiste = new JPanel(new GridLayout(1,2));
         feldleiste = new JPanel();
         feldleiste.setLayout(new GridLayout(reiheno, 1));
-        spielframe.add(feldleiste, BorderLayout.WEST);
+        JButton schiffe4 = new JButton("4er Schiff setzen");
+        schiffe4.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent ae)
+                {
+                    placeship4();
+                }});    
+        seitenleiste.add(schiffe4);
+        JButton schiffe3 = new JButton("3er Schiff setzen");
+        schiffe3.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent ae)
+                {
+                    placeship3();
+                }});
+        seitenleiste.add(schiffe3);
+        seitenleiste.add(feldleiste);
+        spielframe.add(seitenleiste, BorderLayout.WEST);
         spielfeld = new JPanel();
         spielfeld.setLayout(new GridLayout(reiheno,plaetze));
 
@@ -62,7 +79,6 @@ public class Spielfeld
             }    
         }
 
-        
         for(int i=0;i<reiheno;i++)
         {
 
@@ -99,6 +115,15 @@ public class Spielfeld
         System.out.println(button.getName());
 
     } 
+    
+    public void placeship3()
+    {
+        
+    }
+    
+    public void placeship4()
+    {
+    }
     public void schiffeSetzen()
     {
         Reihe reihei = new Reihe("");
@@ -152,8 +177,9 @@ public class Spielfeld
             }   
         }
     }
-        private void buttonschiff(int s, int t)
-        { 
+
+    private void buttonschiff(int s, int t)
+    { 
         for(int i=0;i<reiheno;i++)
         {
             Reihe reihe = reihen.get(i);

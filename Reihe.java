@@ -32,5 +32,10 @@ public class Reihe
     {
         Platz platz = plaetze.get(platznr);
         return platz;
+    }  
+    
+    public ArrayList<Platz> gibPlaetze()
+    {
+        return plaetze;
     }    
 }

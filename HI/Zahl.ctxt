@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Zahl
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Zahl.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=nummer
+comment1.target=Zahl(int)
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Zahl\r\n
+comment2.params=
+comment2.target=int\ gibNummer()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

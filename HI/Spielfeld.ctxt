@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Spielfeld
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Spielfeld.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=reiheno\ plaetze
+comment1.target=Spielfeld(int,\ int)
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Spielfeld\r\n
+comment2.params=reihe
+comment2.target=void\ reiheHinzufuegen(Reihe)
+comment3.params=reiheno\ plaetze
+comment3.target=void\ spielfeldmachen(int,\ int)
+comment4.params=ae
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=i\ p
+comment5.target=void\ gibButtonaus(int,\ int)
+comment6.params=button
+comment6.target=void\ schiffeSetzen(javax.swing.JButton)
+comment7.params=
+comment7.target=void\ alphabetMachen()
+numComments=8

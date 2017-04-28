@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Spieler
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Spieler.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=name
+comment1.target=Spieler(java.lang.String)
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Spieler\r\n
+comment2.params=
+comment2.target=java.lang.String\ gibName()
+comment3.params=newname
+comment3.target=void\ changeName(java.lang.String)
+numComments=4

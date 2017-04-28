@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Platz
+comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Platz.\r\n\ \r\n\ @author\ (Ihr\ Name)\ \r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
+comment1.params=nummer
+comment1.target=Platz(int)
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Platz\r\n
+comment2.params=
+comment2.target=int\ gibNummer()
+comment2.text=\r\n\ Ein\ Beispiel\ einer\ Methode\ -\ ersetzen\ Sie\ diesen\ Kommentar\ mit\ Ihrem\ eigenen\r\n\ \r\n\ @param\ \ y\ \ \ \ ein\ Beispielparameter\ f\u00FCr\ eine\ Methode\r\n\ @return\ \ \ \ \ \ \ \ die\ Summe\ aus\ x\ und\ y\r\n
+comment3.params=button
+comment3.target=void\ setzButton(javax.swing.JButton)
+comment4.params=
+comment4.target=javax.swing.JButton\ gibButton()
+numComments=5

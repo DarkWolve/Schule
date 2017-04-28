@@ -128,7 +128,7 @@ public class Spielfeld
             reihen.add(reihe);
             for(int p=0; p< plaetze;p++)
             {
-                reihe.platzHinzufuegen(new Platz(i+1));
+                reihe.platzHinzufuegen(new Platz(p+1));
             }    
         }
 

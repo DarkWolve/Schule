@@ -63,7 +63,7 @@ public class Spielfeld
         schiffe1.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship3(schiffe1);
+                    //placeship3(schiffe1);
                 }});    
         buttonleiste1.add(schiffe1);
         
@@ -71,7 +71,7 @@ public class Spielfeld
         schiffe2.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship3(schiffe2);
+                    //placeship3(schiffe2);
                 }});
         buttonleiste1.add(schiffe2);
         
@@ -79,7 +79,7 @@ public class Spielfeld
         schiffe3.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship3(schiffe3);
+                    //placeship3(schiffe3);
                 }});    
         buttonleiste1.add(schiffe3);
         
@@ -87,7 +87,7 @@ public class Spielfeld
         schiffe4.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship3(schiffe4);
+                    //placeship3(schiffe4);
                 }});
         buttonleiste1.add(schiffe4);
         
@@ -95,7 +95,7 @@ public class Spielfeld
         schiffe5.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship4(schiffe5);
+                    //placeship4(schiffe5);
                 }});    
         buttonleiste2.add(schiffe5);
         
@@ -103,7 +103,7 @@ public class Spielfeld
         schiffe6.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship4(schiffe6);
+                    //placeship4(schiffe6);
                 }});
         buttonleiste2.add(schiffe6);
         
@@ -111,7 +111,7 @@ public class Spielfeld
         schiffe7.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent ae)
                 {
-                    placeship4(schiffe7);
+                    // placeship4(schiffe7);
                 }});    
         buttonleiste2.add(schiffe7);
         
@@ -147,7 +147,7 @@ public class Spielfeld
                         public void actionPerformed(ActionEvent ae)
                         {
                             //buttonschiff(s, t);
-                            schiffeSetzen();
+                            //schiffeSetzen();
 
                         }});
                 button.setEnabled(false);
@@ -169,7 +169,7 @@ public class Spielfeld
 
     } 
     
-    public void placeship3(JButton button)
+    /*public void placeship3(JButton button)
     {
         Reihe reihei = new Reihe("");
         Object[] possibilities = alphabet.toArray();
@@ -179,20 +179,14 @@ public class Spielfeld
         Object platz1 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
         Zahl platznr1 = (Zahl) platz1;
         alphabet.get(alphabet.indexOf(reihea)).zahlen.remove(platznr1);
-        possibilities = alphabet.toArray();
-        possibilities2 = alphabet.get(0).zahlen.toArray();
-        Object reihe2 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
-        Buchstabe reiheb = (Buchstabe) reihe2;
+        possibilities2 = alphabet.get(alphabet.indexOf(reihea)).zahlen.toArray();
         Object platz2 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
         Zahl platznr2 = (Zahl) platz2;
-        alphabet.get(alphabet.indexOf(reiheb)).zahlen.remove(platznr2);
-        possibilities = alphabet.toArray();
-        possibilities2 = alphabet.get(0).zahlen.toArray();
-        Object reihe3 = JOptionPane.showInputDialog(spielframe, "Wähle die Reihe","Wähle die Reihe", JOptionPane.PLAIN_MESSAGE,  null, possibilities, "");
-        Buchstabe reihec = (Buchstabe) reihe3;
+        alphabet.get(alphabet.indexOf(reihea)).zahlen.remove(platznr2);
+        possibilities2 = alphabet.get(alphabet.indexOf(reihea)).zahlen.toArray();
         Object platz3 = JOptionPane.showInputDialog(spielframe, "Wähle den Platz","Wähle den Platz", JOptionPane.PLAIN_MESSAGE,  null, possibilities2, "");
         Zahl platznr3 = (Zahl) platz3;
-        alphabet.get(alphabet.indexOf(reihec)).zahlen.remove(platznr3);
+        alphabet.get(alphabet.indexOf(reihea)).zahlen.remove(platznr3);
         Platz platzx = new Platz(0);
         Platz platzy = new Platz(0);
         Platz platzz = new Platz(0);
@@ -271,7 +265,7 @@ public class Spielfeld
         }    
        schiffe4e.add(new Schiffe4(platzx, platzy, platzz, platzr)); 
        button.setEnabled(false);
-    }
+    }*/
 
     private void alphabetMachen()
     {

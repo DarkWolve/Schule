@@ -206,7 +206,7 @@ public class Spielfeld
                reihe.gibPlatz(platz.gibNummer()).gibButton().setEnabled(false);
                reihe.gibPlatz(platz.gibNummer()+1).gibButton().setEnabled(false);
                reihe.gibPlatz(platz.gibNummer()+2).gibButton().setEnabled(false);
-               buttonleiste1.add(new JLabel("Shiff: " + reihe.gibName() + platz.gibNummer() + " " + reihe.gibName() + reihe.gibPlatz(platz.gibNummer()).gibNummer() + " " + reihe.gibName() +  reihe.gibPlatz(platz.gibNummer()+1).gibNummer() + " " + reihe.gibName() + reihe.gibPlatz(platz.gibNummer()+2).gibNummer()));
+               buttonleiste1.add(new JLabel("Schiff: " + reihe.gibName() + platz.gibNummer() + " " + reihe.gibName() + reihe.gibPlatz(platz.gibNummer()).gibNummer() + " " + reihe.gibName() +  reihe.gibPlatz(platz.gibNummer()+1).gibNummer() + " " + reihe.gibName() + reihe.gibPlatz(platz.gibNummer()+2).gibNummer()));
                schiffcounter4--;
             }
            else if(schiffpos == 1 && schiffcounter4 > 0)
@@ -229,7 +229,7 @@ public class Spielfeld
                reihen.get(reihen.indexOf(reihe)+1).gibPlatz(platz.gibNummer()-1).gibButton().setEnabled(false);
                reihen.get(reihen.indexOf(reihe)+2).gibPlatz(platz.gibNummer()-1).gibButton().setEnabled(false);
                reihen.get(reihen.indexOf(reihe)+3).gibPlatz(platz.gibNummer()-1).gibButton().setEnabled(false);
-               buttonleiste1.add(new JLabel("Shiff: " + reihe.gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+1).gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+2).gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+3).gibName() + platz.gibNummer()));
+               buttonleiste1.add(new JLabel("Schiff: " + reihe.gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+1).gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+2).gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+3).gibName() + platz.gibNummer()));
                schiffcounter4--;
            }
         }
@@ -254,7 +254,7 @@ public class Spielfeld
                platz.gibButton().setEnabled(false);
                reihe.gibPlatz(platz.gibNummer()).gibButton().setEnabled(false);
                reihe.gibPlatz(platz.gibNummer()+1).gibButton().setEnabled(false);
-               buttonleiste1.add(new JLabel("Shiff: " + reihe.gibName() + platz.gibNummer() + " " + reihe.gibName() + reihe.gibPlatz(platz.gibNummer()).gibNummer() + " " + reihe.gibName() +  reihe.gibPlatz(platz.gibNummer()+1).gibNummer()));
+               buttonleiste1.add(new JLabel("Schiff: " + reihe.gibName() + platz.gibNummer() + " " + reihe.gibName() + reihe.gibPlatz(platz.gibNummer()).gibNummer() + " " + reihe.gibName() +  reihe.gibPlatz(platz.gibNummer()+1).gibNummer()));
                schiffcounter3--;
             }
            else if(schiffpos == 1 && schiffcounter4 > 0)
@@ -276,7 +276,7 @@ public class Spielfeld
                platz.gibButton().setEnabled(false);
                reihen.get(reihen.indexOf(reihe)+1).gibPlatz(platz.gibNummer()-1).gibButton().setEnabled(false);
                reihen.get(reihen.indexOf(reihe)+2).gibPlatz(platz.gibNummer()-1).gibButton().setEnabled(false);
-               buttonleiste1.add(new JLabel("Shiff: " + reihe.gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+1).gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+2).gibName() + platz.gibNummer()));
+               buttonleiste1.add(new JLabel("Schiff: " + reihe.gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+1).gibName() + platz.gibNummer() + " " + reihen.get(reihen.indexOf(reihe)+2).gibName() + platz.gibNummer()));
                schiffcounter3--;
            }
         }   
